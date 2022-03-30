@@ -145,6 +145,12 @@ CREATE TABLE wish_list_details (
 	FOREIGN KEY(product_id) REFERENCES product_details(product_id) ON DELETE CASCADE,
 	FOREIGN KEY(user_id) REFERENCES user_details(user_id)
 );
-	 
+
+CREATE TABLE reset_password_table (
+	reset_id INT GENERATED ALWAYS AS IDENTITY,
+	reset_password_token  VARCHAR(100),
+	user_id INT NULL,
+	FOREIGN KEY(user_id) REFERENCES user_details (user_id) ON DELETE CASCADE
+);
 
 
